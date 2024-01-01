@@ -1,0 +1,61 @@
+<div class="body">
+    <h1 align="center"> Employee Registration </h1>
+    <form #regFrom="ngForm" (ngSubmit)="userRegistration(regFrom.value)">
+  
+      <table align="center">
+        <tr>
+          <td align="right">User Name</td>
+          <td align="left">
+            <input type="text" name="userName" ngModel required minlength="5" #userName="ngModel" />
+            <div *ngIf="userName.errors?.['required'] && userName.touched" style="color: red;">Please provide User name.</div>
+            <div *ngIf="userName.errors?.['minlength'] && userName.touched" style="color: red;">Please provide at least 5 characters.</div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td align="right">Address</td>
+          <td align="left">
+            <input type="text" name="address" ngModel required #address="ngModel" />
+          <div *ngIf="address.errors?.['required'] && address.touched" style="color: red;">Please provide Address</div>
+        </td>
+        </tr>
+  
+        <tr>
+            <td align="right">Phone Number</td>
+            <td align="left">
+              <input type="number" name="phnNumber" ngModel required minlength="10" maxlength="10" #phnNumber="ngModel" />
+              <div *ngIf="phnNumber.errors?.['required'] && phnNumber.touched" style="color: red;">Please provide Phone Number</div>
+              <div *ngIf="phnNumber.errors?.['minlength'] && phnNumber.touched" style="color: red;">Phone Number must be 10 digits long</div>
+              <div *ngIf="phnNumber.errors?.['maxlength'] && phnNumber.touched" style="color: red;">Phone Number must be 10 digits long</div>
+            </td>
+          </tr>
+          
+  
+        <tr>
+          <td align="right">Email-ID</td>
+          <td align="left">
+            <input type="email" name="emailId" ngModel required #emailId="ngModel" />
+            <div *ngIf="emailId.errors?.['required'] && emailId.touched" style="color: red;">Please provide Email-ID.</div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td align="right">Password</td>
+          <td align="left">
+            <input type="password" name="password" ngModel minlength="7" required #password="ngModel" />
+            <div *ngIf="password.errors?.['required'] && password.touched" style="color: red;">Please provide Password.</div>
+            <div *ngIf="password.errors?.['minlength'] && password.touched" style="color: red;">Password should be at least 7 characters.</div>
+          </td>
+        </tr>
+  
+        <tr>
+          <td align="right"></td>
+          <td align="left" style="padding-left: 50px;">
+            <button class="btn btn-primary">Register</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
+  

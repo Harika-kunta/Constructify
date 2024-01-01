@@ -1,0 +1,58 @@
+
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <div class="container123" style="background-image: url('assets/images/login.jpg');">
+      <div style="width: 300px">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" novalidate style="text-align: center;">
+          <table>
+            <tr>
+              <td>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                  </div>
+                  <input class="form-control" type="text" placeholder="Enter Email-Id" name="loginId"
+                    #loginId="ngModel" ngModel required minlength="5" maxlength="50" />
+                <br>
+                    <td>
+                      <div *ngIf="loginId.errors?.['required'] && loginId.touched" style="color: red;">Please Provide Login-ID</div>
+                      <div *ngIf="loginId.errors?.['minlength'] && loginId.touched" style="color: red;">Please Provide At least 5 Characters</div>
+                    </td>
+                </div>
+              </td>
+               </tr>
+
+            <tr>
+              <td>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input class="form-control" type="password" placeholder="Enter Password" name="password"
+                    #password="ngModel" ngModel required minlength="3" maxlength="50" />
+                    <br>
+                    <td>
+                      <div *ngIf="password.errors?.['required'] && password.touched" style="color: red;">Please Provide Password</div>
+                      <div *ngIf="password.errors?.['minlength'] && password.touched" style="color: red;">Please Provide At least 3 Characters</div>
+                    </td>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+                <span>&nbsp;New user?<a routerLink="Register">&nbsp;Register</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 100px">
+                <asl-google-signin-button type='icon' size='large' style="background-image: url('https://onymos.com/wp-content/uploads/2020/10/google-signin-button-1024x260.png')">
+                </asl-google-signin-button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>

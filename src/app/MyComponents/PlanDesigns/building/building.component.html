@@ -1,0 +1,120 @@
+
+<section class="main">
+  <div class="wrap">
+<div class="header">
+    <header class="title">
+      <h2>Building</h2>
+    </header>
+</div>
+<body>
+  <div class="wrapper">
+    <div class="gallery">
+      <div class="image" (click)="openPopup('assets/images/building1.jpg', 'img1')"><span><img src="assets/images/building1.jpg" alt="img1"></span></div>
+      <div class="image" (click)="openPopup('assets/images/building2.jpg', 'img2')"><span><img src="assets/images/building2.jpg" alt="img2"></span></div>
+      <div class="image" (click)="openPopup('assets/images/building3.jpg', 'img3')"><span><img src="assets/images/building3.jpg" alt="img3"></span></div>
+      <div class="image" (click)="openPopup('assets/images/1bhk-bp.jpg', 'img4')"><span><img src="assets/images/1bhk-bp.jpg" alt="img4"></span></div>
+      <div class="image" (click)="openPopup('assets/images/2bhk-bp.jpg', 'img5')"><span><img src="assets/images/2bhk-bp.jpg" alt="img5"></span></div>
+      <div class="image" (click)="openPopup('assets/images/3bhk-bp.jpg', 'img6')"><span><img src="assets/images/3bhk-bp.jpg" alt="img6"></span></div>
+    </div>
+  </div>
+  <div *ngIf="popupImage" class="popup-overlay" (click)="closePopup()">
+    <img [src]="popupImage" [alt]="popupAlt" class="popup-image">
+  </div>   
+</body>
+</div>
+</section>
+<div class="fixed-btn" (click)="openPopup2()">
+  <a class="Consultation">
+  Book Free Consultation
+</a>
+</div>
+
+<div class="popup-overlay" *ngIf="showPopup">
+<div class="popup"  (click)="openPopup2()">
+  <h2>Book Free Consultation</h2>
+  <form #regFrom="ngForm" (ngSubmit)="bookConsultaion()">
+    <table>
+      <tr>
+        <td style="padding-left: 20px;">
+          <input type="text" id="userName" name="userName" [(ngModel)]="consultation.userName" placeholder="Name" #userName="ngModel" required minlength="5" maxlength="50" >
+            <div *ngIf="userName.errors?.['required'] && userName.touched" style="color: red;">Please Provide Name</div>
+            <div *ngIf="userName.errors?.['minlength'] && userName.touched" style="color: red;">Please Provide At least 5 Characters</div>
+        </td>          
+      </tr>
+
+      <td style="color: white;">........</td>
+
+      <tr>
+        <td style="padding-left: 20px;">
+          <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[6-9][0-9]{9}" [(ngModel)]="consultation.phoneNumber" placeholder="Phone Number" #phoneNumber="ngModel" ngModel required minlength="10" maxlength="10">
+          <div *ngIf="phoneNumber.errors?.['required pattern'] && phoneNumber.touched" style="color: red;">Please Provide Phone Number</div>
+          <div *ngIf="phoneNumber.errors?.['minlength'] && phoneNumber.touched" style="color: red;">Please Provide At least 10 digits</div>
+        </td>
+      </tr>
+
+      <td style="color: white;">........</td>
+
+      <tr>
+        <td style="padding-left: 20px;">
+          <input type="email" id="emailId" name="emailId" required pattern="[a-zA-Z].*@[a-zA-Z].*\.[a-zA-Z].*" [(ngModel)]="consultation.emailId" placeholder="Email Id" #emailId="ngModel" ngModel required minlength="10" maxlength="50">
+          <div *ngIf="emailId.errors?.['required '] && emailId.touched" style="color: red;">Please Provide Email id</div>
+          <div *ngIf="emailId.errors?.['required pattern, minlength'] && emailId.touched" style="color: red;">Please Provide A Valid EmailId</div>
+        </td>
+      </tr>
+      <td style="color: white;">........</td>
+      
+      
+      <tr>
+        <td ><div >
+          Please select any one option for Property and Design.
+        </div></td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">
+          <div class="radio-group">
+            <div>
+              <input type="radio" id="apartment" name="property" value="Apartment" [(ngModel)]="consultation.property" #property="ngModel" ngModel required>
+              <label for="apartment">Apartment</label>
+            </div>
+            <div>
+              <input type="radio" id="villa" name="property" value="Villa" [(ngModel)]="consultation.property" #property="ngModel" ngModel required>
+              <label for="villa">Villa</label>
+            </div>
+            <div>
+              <input type="radio" id="independentHouse" name="property" value="Building" [(ngModel)]="consultation.property" #property="ngModel" ngModel required>
+              <label for="independentHouse">Building</label>
+            </div>
+            
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="color: white;">.........</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">
+          <div class="radio-group">
+            <div>
+              <input type="radio" id="interior" name="design" value="Interior" [(ngModel)]="consultation.design">
+              <label for="interior">Interior</label>
+            </div>
+            <div>
+              <input type="radio" id="exterior" name="design" value="Exterior" [(ngModel)]="consultation.design">
+              <label for="exterior">Exterior</label>
+            </div>
+            <div>
+              <input type="radio" id="full" name="design" value="Full" [(ngModel)]="consultation.design">
+              <label for="full">Full</label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <div class="button-group">
+      <button type="submit" >Submit</button>
+      <button class="close-button" (click)="closePopup2()">Close</button>
+    </div>
+  </form>
+</div>
+</div>

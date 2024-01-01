@@ -1,0 +1,208 @@
+
+.main{
+    margin: 35px;
+    border: 0.2px solid;
+    border-radius: 10px;
+    
+  }
+  .header{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 25px;
+    font-style: italic; 
+  }
+
+  .info{
+    margin: 30px;
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+  }
+  .instructions{
+    margin: 25px;
+  }
+  .heading{
+    margin: 15px;
+    text-align: center;
+    font-size: 11px;
+  }
+  .content{
+    display: inline-block;
+    margin: 25px;
+    width: 145px;
+    height: 145px;
+  }
+  p{
+    font-style: inherit;  
+    font-size: 18px; 
+    top: 10px;                    
+  }
+
+  .container{
+    justify-content: center; 
+
+  }
+ 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  .row{
+    margin-top: 170px;
+    margin-bottom: 20px;
+  }
+  .main2{
+    width: 80%;
+    min-height: 330px;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 35px;
+
+  }
+  .service{
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 0 20px -15px black;
+    z-index: 1;
+    transition: transform .7s;
+    height: 400px;
+    width: 350px;
+    margin-left: 38px;
+  }
+  .service-logo{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 10px solid black;
+    margin: -90px auto 0;
+    background: white;
+  }
+  .service-logo img{
+    width: 70%;
+    margin-top: 14px;
+  }
+  .service h4{
+    height:40px;
+    width:200px;
+    background: white;
+    margin: 30px auto;
+    position:relative;
+    font-style: oblique;
+    text-align: center;
+  }
+  .service h4::after{
+    content: "";
+    width: 40px;
+    height:35px;
+    background: linear-gradient(to right,white,black);
+    position:absolute;
+    right:-5px;
+    top:-5px;
+    z-index: -1;
+  }
+  .service h4::before{
+    content: "";
+    width: 40px;
+    height:35px;
+    background: linear-gradient(to right,black,white);
+    position:absolute;
+    left:-5px;
+    bottom:-5px;
+    z-index: -1;
+  }
+
+ .instructions{
+  justify-content: center;
+    align-items: center;
+    display:flex;
+ }
+ .service2{
+  background: white;
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 0 20px -15px black;
+  z-index: 1;
+  transition: transform .7s;
+  height: 400px;
+  width: 350px;
+  margin: 40px;
+}
+li{
+  list-style-type: none;
+  text-align: left;
+  margin-top:30px;
+}
+
+.info-contact{
+  text-align: center;
+  font-style: normal;
+  margin-top: 10px;
+}
+.contact{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+   margin: 20px;
+}
+.btn{
+  text-align: center;
+  display: inline-block;
+  border: solid 1px ;
+  border-radius: 20px;
+  color: aliceblue;
+  background-color: rgb(1, 18, 32);
+  width: 100%;
+  max-width: 200px;
+  height: 60px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+ @media (max-width: 670px) {
+  .main2 {
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  .service,
+  .service2 {
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  .btn {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .main2,
+  .service,
+  .service2 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+  }
+} 
+

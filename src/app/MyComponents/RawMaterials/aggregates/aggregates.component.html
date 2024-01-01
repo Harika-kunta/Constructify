@@ -1,0 +1,27 @@
+
+<section class="header">
+    <div class="header">
+      <header class="title">
+        <h2>Aggregates</h2>
+      </header>
+      <div class="description">
+        <p>Check aggregates stone price online in Hyderabad. We offer aggregates, refined river sand, non-refined river sand and robo sand. We are authorized dealer and supplier in Hyderabad. Aggregates stone price mentioned herein is only applicable to Hyderabad. We offer attractive discounts and never to miss exciting offers on our products. Our customers get FREE delivery across the city. We strive to serve you better by offering the best affordable rates without compromising on quality and customer satisfaction.</p>
+      </div>
+    </div>
+  
+    <div class="grid-container">
+      <div class="col-md-3" *ngFor="let product of products">
+        <div class="card">
+          <br/>
+          <img class="product-card" src="{{product.prodImg}}" alt="Card image">
+          <div class="card-body">
+            <h3 class="product-name">{{product.prodName}}</h3>
+            <p class="product-price">Price: ₹{{product.price}}/Ton</p>
+            <p align="right">
+              <button class="add-to-cart" (click)="addToCart(product)"> Add to Cart </button>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>

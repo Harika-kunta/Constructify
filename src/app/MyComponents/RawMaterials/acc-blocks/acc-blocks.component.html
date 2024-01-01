@@ -1,0 +1,29 @@
+
+<section class="header">
+    <div class="header">
+      <header class="title">
+        <h2>AAC Blocks</h2>
+      </header>
+      <div class="description">
+        <p>Great quality AAC Blocks price list available online. AAC Blocks offer great stability to building structures. AAC Blocks provide high precision in size and as a result saves cement and steel usage. These blocks are porous, renewable, reusable as well as recyclable. Our catalogue also includes AAC Blocks from SmartBrix AAC Blocks, Prime AAC Blocks & Greenstone AAC Blocks. AAC Blocks price listed is only for Hyderabad city. Our customers get free delivery across Hyderabad. We have exciting offers for all our products.
+          Usage of AAC blocks reduces the overall dead weight of a structure, thereby allowing construction of firmer and taller buildings. AAC Blocks require lesser number of joints, which result in saving time, jointing material and labor. AAC blocks can be easily carved, drilled, nailed, milled and shaped to fit individual requirements. They are 3-4 times lighter than traditional concrete, which leads to advantages in transportation and material handling. AAC Blocks ensures a smooth and accurate masonry profile.
+        </p>
+      </div>
+    </div>
+  
+    <div class="grid-container">
+      <div class="col-md-3" *ngFor="let product of products">
+        <div class="card">
+          <br/>
+          <img class="product-card" src="{{product.prodImg}}" alt="Card image">
+          <div class="card-body">
+            <h3 class="product-name">{{product.prodName}}</h3>
+            <p class="product-price">Price:₹{{product.price}}/piece</p>
+            <p align="right">
+              <button class="add-to-cart" (click)="addToCart(product)"> Add to Cart </button>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>

@@ -1,0 +1,65 @@
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container">
+    <div class="card emptyCart">
+      <!-- <h5 class="card-title">My Cart</h5> -->
+    </div>
+    <div class="center">
+      <img src="assets\images\emptyCart.png" alt="">
+      <h4>Your Cart is empty!!</h4>
+      <button class="btn btn-primary" routerLink="/Products">ShopNow</button>
+    </div>
+  </div>
+</ng-container>
+
+    <ng-container *ngIf="products.length != 0">
+    <div class="cart-container">
+      <div class="cart-products left-bar">
+        <h2 align="center">Cart Items</h2>
+        <div class="row md-1 gy-3 my-3">
+        <div class="col-md-3" *ngFor="let item of products">
+          <div class="card" >
+            <br />
+            <img class="card-img-top" src="{{item.prodImg}}" alt="product image" >
+            <div class="card-body">
+              <h3 class="card-title">{{item.prodName}}</h3>
+              <p class="card-text">Price: ₹{{item.price}}</p>
+              
+              <p class="unit">Quantity: <input type="number" [(ngModel)]="item.quantity" (ngModelChange)="updateTotal(item)" min="1" max="5" step="1"></p>
+              <p>Total: ₹{{item.total | number:'1.2-2' }}</p>
+              <div>
+                <button class="btn btn-danger" (click)="removeProduct(item)">Remove</button>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+      </div>
+      <div class="cart-summary right-bar">
+        <h2>Checkout Details</h2>
+        <div class="subtotal">
+          <span>Subtotal : </span>
+          <span>₹{{grandTotal | number:'1.2-2' }}</span>
+        </div>
+        <div class="tax">
+          <span>Tax : </span>
+          <span>₹{{ tax | number:'1.2-2'}}</span>
+        </div>
+        <div class="shipping">
+          <span>Shipping Charges : </span>
+          <span>₹{{ shipping }}</span>
+        </div>
+        <div class="total">
+          <span>Grand Total : </span>
+          <span>₹{{ AmountToBePaid | number:'1.2-2' }}</span>
+        </div>
+        <button class="checkout-button" (click)="makeMyOder()">Checkout</button>
+        <br/>
+      <div>
+        <button class="btn btn-danger" (click)="removeAllProducts()">Empty cart</button>
+      </div>
+      </div>
+      
+    </div>
+
+  </ng-container>

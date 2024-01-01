@@ -1,0 +1,199 @@
+<div class="div1" style="background-image: url('assets/images/home1.jpg');">
+  <br><br><br><br><br><br>
+  <h1>Elevate Your Living</h1>
+  <h3 style="text-align: center; padding-left: 57px; font-size: 25px; color: white">Find the Perfect Interior Design
+    and Exterior Inspiration for Your Home</h3>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<div class="div2">
+  <div class="image-container">
+    <img
+      src="https://images.livspace-cdn.com/w:60/h:60/q:50/plain/https://d3gq2merok8n5r.cloudfront.net/img/landingpages/full-home-interiors/Edge_New/new-folder-1657193933-8Jkh5/usp-icons-1657525878-VEDjj/personalised-design-60x60-1657526074-fzE3H.png">
+    <p class="image-caption">Personalised designs</p>
+  </div>
+  <div class="image-container">
+    <img
+      src="https://images.livspace-cdn.com/w:60/h:60/q:50/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/in/page-1646208371-nMa3u/desired-home-interiors-1646208400-Ol37G/10-year-warranty-desktop-1646210954-fh1K8.png">
+    <p class="image-caption">10-year warranty¹</p>
+  </div>
+  <div class="image-container">
+    <img
+      src="https://images.livspace-cdn.com/w:60/h:60/q:50/plain/https://d3gq2merok8n5r.cloudfront.net/bumblebee/in/page-1646208371-nMa3u/desired-home-interiors-1646208400-Ol37G/transparent-pricing-desktop-1646210957-nGL2T.png">
+    <p class="image-caption">Transparent pricing</p>
+  </div>
+</div>
+
+
+<div class="div3">
+  <h1>The Home Design you crave</h1>
+  <p>When you give your home the touch, you get both beauty and functionality. We employ state-of-the-art technology to ensure your home features a flawless look that lasts a very long time.</p>
+  <button style="background-color: lightcoral; font-size: 15px;" (click)="openPopup()" >BOOK FREE CONSULTATION</button>
+</div>
+
+
+<div class="price-estimator">
+  <div class="wrapper">
+    <div class="header">
+      <h2>Interior Price Estimator</h2>
+      <p>Calculate the approximate cost of doing up your interiors</p>
+    </div>
+    <div class="carousel">
+      <div class="slide">
+        <img src="assets/images/full-home-interior-1-1675788036-JKqzI.avif" alt="Image 1">
+        <h4>Full Home</h4>
+        <p>Get an approximate costing for your full home interiors</p>
+        <a href="#" class="calculate-btn">Calculate</a>
+      </div>
+      <div class="slide">
+        <img src="assets/images/full-home-interior-1-1675788036-JKqzI.avif" alt="Image 1">
+        <h4>Kitchen</h4>
+        <p>Get an approximate costing for your Kitchen interiors</p>
+        <a href="#" class="calculate-btn">Calculate</a>
+      </div>
+      <div class="slide">
+        <img src="assets/images/full-home-interior-1-1675788036-JKqzI.avif" alt="Image 1">
+        <h4>Wardrobe</h4>
+        <p>Get an approximate costing for your Wardrobe</p>
+        <a href="#" class="calculate-btn">Calculate</a>
+      </div>
+      <div class="slide">
+        <img src="assets/images/full-home-interior-1-1675788036-JKqzI.avif" alt="Image 1">
+        <h4>BedRoom</h4>
+        <p>Get an approximate costing for your BedRoom</p>
+        <a href="#" class="calculate-btn">Calculate</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div4" style="background-color: lightgrey">
+  <h1>Homes for every style</h1>
+  <p style="font-size: 25px;">Superior finishes, trendy designs, and quality modules at affordable prices.</p>
+
+  <body>
+    <div class="wrapper">
+      <div class="carousel-container">
+        <ul class="carousel">
+          <a class="nav-link" routerLink="/Design">
+            <li class="card">
+              <div class="img"><img src="assets/images/interior.jpg" alt="img" draggable="false"></div>
+              <h2>Interior Designs</h2>
+            </li>
+          </a>
+          <a class="nav-link" routerLink="/Design">
+            <li class="card">
+              <div class="img"><img src="assets/images/exterior.jpg" alt="img" draggable="false"></div>
+              <h2>Exterior Designs</h2>
+            </li>
+          </a>
+          <a class="nav-link" routerLink="/Products">
+            <li class="card">
+              <div class="img"><img src="assets/images/products1.jpg" alt="img" draggable="false"></div>
+              <h2>Raw Materials</h2>
+            </li>
+          </a>
+          <a class="nav-link" routerLink="/Products">
+            <li class="card">
+              <div class="img"><img src="assets/images/furniture.jpg" alt="img" draggable="false"></div>
+              <h2>Furniture</h2>
+            </li>
+          </a>
+        </ul>
+        
+      </div>
+    </div>
+  </body>
+</div>
+
+<div class="popup-overlay" *ngIf="showPopup">
+<div class="popup"  (click)="openPopup()">
+  <h2>Book Free Consultation</h2>
+  <form #regFrom="ngForm" (ngSubmit)="bookConsultaion()">
+    <table>
+      <tr>
+        <td style="padding-left: 20px;">
+          <input type="text" id="userName" name="userName" [(ngModel)]="consultation.userName" placeholder="Name" #userName="ngModel" required minlength="5" maxlength="50" >
+            <div *ngIf="userName.errors?.['required'] && userName.touched" style="color: red;">Please Provide Name</div>
+            <div *ngIf="userName.errors?.['minlength'] && userName.touched" style="color: red;">Please Provide At least 5 Characters</div>
+        </td>          
+      </tr>
+
+      <td style="color: white;">........</td>
+
+      <tr>
+        <td style="padding-left: 20px;">
+          <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[6-9][0-9]{9}" [(ngModel)]="consultation.phoneNumber" placeholder="Phone Number" #phoneNumber="ngModel" ngModel required minlength="10" maxlength="10">
+          <div *ngIf="phoneNumber.errors?.['required pattern'] && phoneNumber.touched" style="color: red;">Please Provide Phone Number</div>
+          <div *ngIf="phoneNumber.errors?.['minlength'] && phoneNumber.touched" style="color: red;">Please Provide At least 10 digits</div>
+        </td>
+      </tr>
+
+      <td style="color: white;">........</td>
+
+      <tr>
+        <td style="padding-left: 20px;">
+          <input type="email" id="emailId" name="emailId" required pattern="[a-zA-Z].*@[a-zA-Z].*\.[a-zA-Z].*" [(ngModel)]="consultation.emailId" placeholder="Email Id" #emailId="ngModel" ngModel required minlength="10" maxlength="50">
+          <div *ngIf="emailId.errors?.['required '] && emailId.touched" style="color: red;">Please Provide Email id</div>
+          <div *ngIf="emailId.errors?.['required pattern, minlength'] && emailId.touched" style="color: red;">Please Provide A Valid EmailId</div>
+        </td>
+      </tr>
+      <td style="color: white;">........</td>
+      
+      
+      <tr>
+        <td ><div >
+          Please select any one option for Property and Design.
+        </div></td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">
+          <div class="radio-group">
+            <div>
+              <input type="radio" id="apartment" name="property" value="Apartment" [(ngModel)]="consultation.property" #property="ngModel" ngModel required>
+              <label for="apartment">Apartment</label>
+            </div>
+            <div>
+              <input type="radio" id="villa" name="property" value="Villa" [(ngModel)]="consultation.property" #property="ngModel" ngModel required>
+              <label for="villa">Villa</label>
+            </div>
+            <div>
+              <input type="radio" id="independentHouse" name="property" value="Building" [(ngModel)]="consultation.property" #property="ngModel" ngModel required>
+              <label for="independentHouse">Building</label>
+            </div>
+            
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="color: white;">.........</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">
+          <div class="radio-group">
+            <div>
+              <input type="radio" id="interior" name="design" value="Interior" [(ngModel)]="consultation.design">
+              <label for="interior">Interior</label>
+            </div>
+            <div>
+              <input type="radio" id="exterior" name="design" value="Exterior" [(ngModel)]="consultation.design">
+              <label for="exterior">Exterior</label>
+            </div>
+            <div>
+              <input type="radio" id="full" name="design" value="Full" [(ngModel)]="consultation.design">
+              <label for="full">Full</label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <div class="button-group">
+      <button type="submit" >Submit</button>
+      <button class="close-button" (click)="closePopup()">Close</button>
+    </div>
+  </form>
+</div>
+</div>
+
+

@@ -1,0 +1,28 @@
+
+<section class="header">
+    <div class="header">
+      <header class="title">
+        <h2>Cement</h2>
+      </header>
+      <div class="description">
+        <p>Affordable cement prices in Hyderabad for different brands. We are the authorized dealer and supplier for cement types like OPC 43 & OPC 53 Grade, PPC 43 Grade & PPC 53 Grade, and Super Cement. Our website has an updated price list for all cement types. We offer the best cement wholesale rate online with the lowest price per bag in Hyderabad. The cement price mentioned is only valid for the Hyderabad region. Shop from Hyderabad’s favorite destination for all your construction materials today. Order today from Builders9 to avail incredible offers on every product. We offer FREE delivery all across Hyderabad. Check our range of cement products- OPC Cement, PPC Cement & Super Cement. Buy cement online from builders9. Get updated cement prices today in Hyderabad.
+        </p>
+      </div>
+    </div>
+  
+    <div class="grid-container">
+        <div class="col-md-3" *ngFor="let product of products">
+          <div class="card">
+            <br/>
+            <img class="product-card" src="{{product.prodImg}}" alt="Card image">
+            <div class="card-body">
+              <h3 class="product-name">{{product.prodName}}</h3>
+              <p class="product-price">Price: ₹{{product.price}}/Bag</p>
+              <p align="right">
+                <button class="add-to-cart" (click)="addToCart(product)"> Add to Cart </button>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>    

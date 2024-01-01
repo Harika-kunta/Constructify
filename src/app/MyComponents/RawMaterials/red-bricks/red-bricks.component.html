@@ -1,0 +1,27 @@
+
+<section class="header">
+    <div class="header">
+      <header class="title">
+        <h2>Reb Bricks</h2>
+      </header>
+      <div class="description">
+        <p>We have updated online price list of Red Brick. It is a beautiful building material with warm colors, a natural appearance and, once built, it needs no ongoing maintenance. These bricks are not uniform in size and texture but when compared to others is one of the best. We also offer Red Bricks from other brands such as Karimnagar Red Bricks, Maharashtra Red Bricks & Vijayawada Red Bricks. The mentioned price list is only for red brick. Place order from our store to avail free delivery & awesome discounts!</p>
+      </div>
+    </div>
+  
+    <div class="grid-container">
+      <div class="col-md-3" *ngFor="let product of products">
+        <div class="card">
+          <br/>
+          <img class="product-card" src="{{product.prodImg}}" alt="Card image">
+          <div class="card-body">
+            <h3 class="product-name">{{product.prodName}}</h3>
+            <p class="product-price">Price: ₹{{product.price}}/piece</p>
+            <p align="right">
+              <button class="add-to-cart" (click)="addToCart(product)"> Add to Cart </button>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>

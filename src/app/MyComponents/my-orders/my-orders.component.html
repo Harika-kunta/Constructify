@@ -1,0 +1,35 @@
+<div class="body">
+    <ng-container *ngIf="orders.length==0 || !orders">
+        <div class="card">
+
+            <div class="emptyOrders">
+                <img src="assets\images\emptyOrders.png" alt="">
+                <h4>You Have'nt orderd anything yet!!</h4>
+                <button class="btn btn-primary" routerLink="/Products">OrderNow</button>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="orders.length!=0">
+        <h3 align="center">My Orders</h3>
+
+        <div class="container">
+            <table class="table table-sm text-center table-hover table-bordered table-striped">
+                <thead class="bg-info">
+                    <tr>
+                        <th> Sr.No </th>
+                        <th> Products </th>
+                        <th> Amount </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders, let i=index">
+                        <td> {{ i+1 }} </td>
+                        <td> {{ order.products }} </td>
+                        <td> {{ order.amount }} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-container>
+</div>

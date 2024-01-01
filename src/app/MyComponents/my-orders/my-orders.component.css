@@ -1,0 +1,44 @@
+
+.card {
+  height: 500px;
+  max-width: 60%; 
+  margin-left: 250px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.emptyOrders {
+  text-align: center;
+  margin: 50px;
+}
+
+.emptyOrders img {
+  max-width: 700px;
+  margin-bottom: 15px;
+}
+
+.emptyOrders h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.emptyOrders button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.emptyOrders button:hover {
+  background-color: #0056b3;
+}
+.container{
+  min-height: 80%;
+  height: 600px;
+}

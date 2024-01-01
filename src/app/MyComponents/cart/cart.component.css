@@ -1,0 +1,151 @@
+.emptyCart{
+  height: 80vh;
+  margin: 25px;
+  padding: 25px;
+  min-width: 800px ;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  width: 30px;
+}
+
+.center img{
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+  height: 400px;
+  width: 500px;
+}
+input{
+  width: 30px;
+  height: 20px;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container-cols{
+  display: flex;
+}
+.cart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.cart-products {
+  flex: 65%;
+  max-width: 65%;
+  height: 100vh;
+  padding-right: 20px;
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+h3{
+  font-size: 15px;
+}
+.card-img-top {
+  height: 80px;
+  width: 80px;
+  
+  object-fit: cover;
+}
+
+.cart-summary {
+  flex: 33%;
+  max-width: 33%;
+  width: 100%;
+  height: auto;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-left: none;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.checkout-button,
+.btn-danger {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+}
+.checkout-button{
+  background-color: green;
+}
+.btn-danger{
+background-color: #ff0000;
+}
+.checkout-button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.subtotal,
+.tax,
+.shipping,
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+
+.cart-summary h2 {
+  text-align: center;
+}
+
+
+
+.cart-products h2 {
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+  
+  .cart-container {
+    flex-direction: column;
+  }
+
+  .cart-products {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .cart-summary {
+    flex: 100%;
+    max-width: 100%;
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  
+  .cart-summary {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
